@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_12_185434) do
+ActiveRecord::Schema.define(version: 2018_07_12_190937) do
 
   create_table "cooking_times", force: :cascade do |t|
     t.integer "prep_time", default: 0, null: false
@@ -51,6 +51,18 @@ ActiveRecord::Schema.define(version: 2018_07_12_185434) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "current_revision_id"
+  end
+
+  create_table "revision_ingredients", force: :cascade do |t|
+    t.integer "revision_id"
+    t.integer "ingredient_id"
+    t.text "notes"
+    t.integer "order"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["ingredient_id"], name: "index_revision_ingredients_on_ingredient_id"
+    t.index ["revision_id"], name: "index_revision_ingredients_on_revision_id"
+    t.index [nil, "order"], name: "index_revision_ingredients_on_revision_and_order", unique: true
   end
 
   create_table "revision_steps", force: :cascade do |t|

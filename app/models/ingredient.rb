@@ -16,6 +16,8 @@
 
 class Ingredient < ApplicationRecord
 
+  has_many :revision_steps
+  has_many :revisions, through: :revision_steps, inverse_of: :ingredients
   belongs_to :recipe, optional: true, inverse_of: :yielded_ingredients
 
   validates :name, presence: true

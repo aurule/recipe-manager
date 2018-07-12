@@ -19,6 +19,8 @@ class Revision < ApplicationRecord
   belongs_to :recipe
 
   has_many :revision_steps
-  has_many :steps, through: :revision_steps
+  has_many :steps, through: :revision_steps, inverse_of: :revisions
+  has_many :revision_ingredients
+  has_many :ingredients, through: :revision_steps, inverse_of: :revisions
 
 end
