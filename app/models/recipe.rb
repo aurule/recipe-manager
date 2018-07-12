@@ -23,5 +23,6 @@ class Recipe < ApplicationRecord
   has_one :user, through: :user_recipes
   has_many :revisions, dependent: :destroy
   belongs_to :current_revision, class_name: 'Revision', foreign_key: :current_revision_id, optional: true
+  has_many :yielded_ingredients, class_name: 'Ingredient', inverse_of: :recipe
 
 end

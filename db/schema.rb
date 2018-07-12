@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_12_184104) do
+ActiveRecord::Schema.define(version: 2018_07_12_185434) do
 
   create_table "cooking_times", force: :cascade do |t|
     t.integer "prep_time", default: 0, null: false
@@ -22,6 +22,15 @@ ActiveRecord::Schema.define(version: 2018_07_12_184104) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["timeable_type", "timeable_id"], name: "index_cooking_times_on_timeable_type_and_timeable_id"
+  end
+
+  create_table "ingredients", force: :cascade do |t|
+    t.integer "recipe_id"
+    t.string "name", null: false
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["recipe_id"], name: "index_ingredients_on_recipe_id"
   end
 
   create_table "quantities", force: :cascade do |t|
