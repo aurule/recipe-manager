@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_12_154359) do
+ActiveRecord::Schema.define(version: 2018_07_12_155355) do
+
+  create_table "cooking_times", force: :cascade do |t|
+    t.integer "prep_time", default: 0, null: false
+    t.integer "active_time", default: 0, null: false
+    t.integer "passive_time", default: 0, null: false
+    t.integer "total_time", default: 0, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "quantities", force: :cascade do |t|
     t.float "amount"
