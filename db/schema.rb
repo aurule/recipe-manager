@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_12_163943) do
+ActiveRecord::Schema.define(version: 2018_07_12_173329) do
 
   create_table "cooking_times", force: :cascade do |t|
     t.integer "prep_time", default: 0, null: false
@@ -50,6 +50,20 @@ ActiveRecord::Schema.define(version: 2018_07_12_163943) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_user_configs_on_user_id"
+  end
+
+  create_table "user_recipes", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "recipe_id"
+    t.integer "original_recipe_id"
+    t.boolean "public_access", default: false, null: false
+    t.boolean "allow_copy", default: false, null: false
+    t.string "permalink"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["original_recipe_id"], name: "index_user_recipes_on_original_recipe_id"
+    t.index ["recipe_id"], name: "index_user_recipes_on_recipe_id"
+    t.index ["user_id"], name: "index_user_recipes_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

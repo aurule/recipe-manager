@@ -18,4 +18,7 @@ class Recipe < ApplicationRecord
 
   validates :title, presence: true
 
+  has_one :user_recipe
+  has_one :user, through: :user_recipes
+
 end
