@@ -17,28 +17,30 @@ ActiveRecord::Schema.define(version: 2018_07_12_163943) do
     t.integer "active_time", default: 0, null: false
     t.integer "passive_time", default: 0, null: false
     t.integer "total_time", default: 0, null: false
+    t.string "timeable_type"
+    t.integer "timeable_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["timeable_type", "timeable_id"], name: "index_cooking_times_on_timeable_type_and_timeable_id"
   end
 
   create_table "quantities", force: :cascade do |t|
     t.float "amount", null: false
     t.string "unit", null: false
+    t.string "quantable_type"
+    t.integer "quantable_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["quantable_type", "quantable_id"], name: "index_quantities_on_quantable_type_and_quantable_id"
   end
 
   create_table "recipes", force: :cascade do |t|
-    t.integer "quantity_id"
-    t.integer "cooking_time_id"
     t.string "title", null: false
     t.text "description", default: "", null: false
     t.string "attribution"
     t.string "cuisine"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["cooking_time_id"], name: "index_recipes_on_cooking_time_id"
-    t.index ["quantity_id"], name: "index_recipes_on_quantity_id"
   end
 
   create_table "user_configs", force: :cascade do |t|

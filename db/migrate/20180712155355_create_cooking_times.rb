@@ -5,6 +5,7 @@ class CreateCookingTimes < ActiveRecord::Migration[5.2]
       t.integer :active_time, default: 0, null: false
       t.integer :passive_time, default: 0, null: false
       t.integer :total_time, default: 0, null: false
+      t.references :timeable, polymorphic: true
 
       t.timestamps
     end
