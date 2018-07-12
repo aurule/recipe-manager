@@ -11,8 +11,8 @@
 
 class User < ApplicationRecord
 
-  has_one :user_config
-  has_many :user_recipes
+  has_one :user_config, dependent: :destroy
+  has_many :user_recipes, dependent: :destroy
   has_many :recipes, through: :user_recipes
 
   validates :email, uniqueness: { case_sensitive: false }
