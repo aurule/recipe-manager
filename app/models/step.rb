@@ -14,4 +14,7 @@ class Step < ApplicationRecord
 
   validates :description, presence: true
 
+  has_many :revision_steps
+  has_many :revisions, through: :revision_steps
+
 end

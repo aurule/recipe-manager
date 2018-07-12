@@ -18,4 +18,7 @@ class Revision < ApplicationRecord
 
   belongs_to :recipe
 
+  has_many :revision_steps
+  has_many :steps, through: :revision_steps
+
 end
