@@ -3,8 +3,8 @@
 # Table name: user_configs
 #
 #  id                 :integer          not null, primary key
-#  measurement_system :string
-#  temperature_unit   :string
+#  measurement_system :string           default("imperial"), not null
+#  temperature_unit   :string           default("F"), not null
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null
 #  user_id            :integer          not null

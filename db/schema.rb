@@ -22,16 +22,16 @@ ActiveRecord::Schema.define(version: 2018_07_12_155355) do
   end
 
   create_table "quantities", force: :cascade do |t|
-    t.float "amount"
-    t.string "unit"
+    t.float "amount", null: false
+    t.string "unit", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "user_configs", force: :cascade do |t|
     t.integer "user_id", null: false
-    t.string "temperature_unit"
-    t.string "measurement_system"
+    t.string "temperature_unit", default: "F", null: false
+    t.string "measurement_system", default: "imperial", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_user_configs_on_user_id"
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 2018_07_12_155355) do
 
   create_table "users", force: :cascade do |t|
     t.string "email", null: false
-    t.string "name"
+    t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

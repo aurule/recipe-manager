@@ -3,8 +3,8 @@
 # Table name: quantities
 #
 #  id         :integer          not null, primary key
-#  amount     :float
-#  unit       :string
+#  amount     :float            not null
+#  unit       :string           not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
