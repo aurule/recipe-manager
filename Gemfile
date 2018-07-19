@@ -3,18 +3,22 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
 
+gem 'bootstrap', '~> 4.1.1'
 gem 'coffee-rails', '~> 4.2'
 gem 'devise' # Authentication
 gem 'haml-rails'
 gem 'jbuilder', '~> 2.5'
+gem 'jquery-rails'
 gem 'puma', '~> 3.11'
 gem 'pundit' # Authorization
 gem 'rails', '~> 5.2.0'
+gem 'react-rails'
 gem 'sass-rails', '~> 5.0'
 gem 'simple_form' # Simple Form DSL
 gem 'sqlite3'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
+gem 'webpacker', '~> 3.5'
 gem 'will_paginate' # collection pagination
 
 # Shrine
