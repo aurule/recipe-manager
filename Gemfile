@@ -9,6 +9,7 @@ gem 'devise' # Authentication
 gem 'haml-rails'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
+gem 'measured-rails'
 gem 'puma', '~> 3.11'
 gem 'pundit' # Authorization
 gem 'rails', '~> 5.2.0'
