@@ -3,6 +3,7 @@
 # Table name: revisions
 #
 #  id                 :bigint(8)        not null, primary key
+#  cooked_at          :datetime
 #  notes              :string
 #  rating             :integer
 #  created_at         :datetime         not null
