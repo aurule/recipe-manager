@@ -2,7 +2,7 @@
 #
 # Table name: steps
 #
-#  id          :integer          not null, primary key
+#  id          :bigint(8)        not null, primary key
 #  comment     :text
 #  description :text             not null
 #  title       :string

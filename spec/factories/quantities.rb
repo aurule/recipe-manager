@@ -2,13 +2,13 @@
 #
 # Table name: quantities
 #
-#  id             :integer          not null, primary key
+#  id             :bigint(8)        not null, primary key
 #  amount         :float            not null
 #  quantable_type :string
 #  unit           :string           not null
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
-#  quantable_id   :integer
+#  quantable_id   :bigint(8)
 #
 # Indexes
 #

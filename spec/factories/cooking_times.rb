@@ -2,7 +2,7 @@
 #
 # Table name: cooking_times
 #
-#  id            :integer          not null, primary key
+#  id            :bigint(8)        not null, primary key
 #  active_time   :integer          default(0), not null
 #  passive_time  :integer          default(0), not null
 #  prep_time     :integer          default(0), not null
@@ -10,7 +10,7 @@
 #  total_time    :integer          default(0), not null
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
-#  timeable_id   :integer
+#  timeable_id   :bigint(8)
 #
 # Indexes
 #

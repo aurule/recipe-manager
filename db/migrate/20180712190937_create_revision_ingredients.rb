@@ -7,7 +7,7 @@ class CreateRevisionIngredients < ActiveRecord::Migration[5.2]
       t.integer :order
 
       t.timestamps
-      t.index [:revision, :order], unique: true
+      t.index [:revision_id, :order], unique: true
     end
   end
 end
