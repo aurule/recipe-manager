@@ -2,12 +2,10 @@
 #
 # Table name: user_configs
 #
-#  id                 :integer          not null, primary key
-#  measurement_system :string           default("imperial"), not null
-#  temperature_unit   :string           default("F"), not null
-#  created_at         :datetime         not null
-#  updated_at         :datetime         not null
-#  user_id            :integer          not null
+#  id         :integer          not null, primary key
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  user_id    :integer          not null
 #
 # Indexes
 #
@@ -17,7 +15,5 @@
 FactoryBot.define do
   factory :user_config do
     user
-    temperature_unit "F"
-    measurement_system "imperial"
   end
 end
