@@ -6,7 +6,6 @@ ruby '2.5.1'
 gem 'bootstrap', '~> 4.1.1'
 gem 'coffee-rails', '~> 4.2'
 gem 'devise' # Authentication
-gem 'dotenv-rails', require: 'dotenv/rails-now'
 gem 'haml-rails'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
